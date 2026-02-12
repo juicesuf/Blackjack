@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blackjack.Lib
 {
-    public class Card
+    public class Card : ICard
     {
         public CardSuit Suit { get; }
         public CardValue Value { get; }

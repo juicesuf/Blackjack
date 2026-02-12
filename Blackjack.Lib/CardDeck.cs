@@ -8,13 +8,15 @@ namespace Blackjack.Lib
 {
     public class CardDeck
     {
-        Card[] cards = new Card[52];
-        int counter=0;
+        const int _CardsInADeck = 52;  
+        Card[] _cards = new Card[_CardsInADeck];  //Ein Kartendeck besteht aus 52 Karten//
 
-        public Card[] Cards { get; }
+        public Card[] Cards { get { return _cards; } }  //Array für den Deck//
 
         public CardDeck()
+        //
         {
+            int _counter = 0;
             for (int colour = 0; colour <= 3; colour++)
             {
                 for (int deckValue = 0; deckValue <= 12; deckValue++)
@@ -22,7 +24,7 @@ namespace Blackjack.Lib
                     CardSuit suit = (CardSuit)colour;
                     CardValue value = (CardValue)deckValue;
 
-                    cards[counter++] = new Card(suit, value);
+                    _cards[_counter++] = new Card(suit, value);
                 }
             }
         }

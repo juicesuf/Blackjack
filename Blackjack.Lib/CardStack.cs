@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blackjack.Lib
 {
-    public class CardStack
+    public class CardStack : ICardStack
     {
         private const int _NUMBER_OF_DECKS = 6;
         public List<Card> Cards { get; }

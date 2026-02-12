@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3344924B-D9CB-4709-8145-3088E4C091B5}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Blackjack.Lib</RootNamespace>
-    <AssemblyName>Blackjack.Lib</AssemblyName>
+    <ProjectGuid>{60609CBA-93FE-460F-9A8D-D748D3756E46}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Blackjack.UI</RootNamespace>
+    <AssemblyName>Blackjack.UI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,16 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Card.cs" />
-    <Compile Include="CardDeck.cs" />
-    <Compile Include="CardStack.cs" />
-    <Compile Include="CardSuit.cs" />
-    <Compile Include="CardValue.cs" />
-    <Compile Include="Factory.cs" />
-    <Compile Include="Hand.cs" />
-    <Compile Include="ICard.cs" />
-    <Compile Include="ICardStack.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blackjack.Lib\Blackjack.Lib.csproj">
+      <Project>{3344924b-d9cb-4709-8145-3088e4c091b5}</Project>
+      <Name>Blackjack.Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

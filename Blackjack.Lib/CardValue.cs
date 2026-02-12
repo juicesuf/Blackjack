@@ -8,7 +8,8 @@ namespace Blackjack.Lib
 {
     public enum CardValue
     {
-        Ace,
+        //Eine Karte eine von den Werten im Enum//
+        Ace,        
         Two,
         Three,
         Four,
