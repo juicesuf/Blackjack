@@ -9,10 +9,12 @@ namespace Blackjack.UI
 {
     class Program
     {
+        /// <summary>
+        /// Startet das Programm(Benutzung der Karten).
+        /// </summary>
         static void Main(string[] args)
         {
             Card card = new Card(CardSuit.Spade, CardValue.Jack);
-
             Console.WriteLine(card.ToString());
 
             CardDeck cardDeck = new CardDeck();
@@ -25,4 +27,5 @@ namespace Blackjack.UI
             Console.ReadKey();
         }
     }
+
 }

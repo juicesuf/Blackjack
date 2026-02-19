@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Blackjack.Lib
 {
-    public interface ICardStack
+    public enum HandStatus
     {
-        List<ICard> Cards { get; }
-
-        void Shuffle(int numberOfShuffles);
-
-        ICard DrawCard();
+        Safe,
+        Busted,
+        BlackJack,
+        TripleSeven,
+        FiveCardCharlie
     }
 }
