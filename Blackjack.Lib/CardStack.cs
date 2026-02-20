@@ -15,6 +15,7 @@ namespace Blackjack.Lib
         /// Anzahl der verwendeten Kartendecks.
         /// </summary>
         private const int _NUMBER_OF_DECKS = 6;
+        CardDeck deck = new CardDeck();
 
         /// <summary>
         /// Enthält alle Karten im Stapel.
@@ -25,7 +26,7 @@ namespace Blackjack.Lib
         /// Erstellt einen neuen Kartenstapel mit mehreren Kartendecks.
         /// </summary>
         /// <param name="deck">Ein Kartendeck.</param>
-        public CardStack(CardDeck deck)
+        public CardStack()
         {
             Cards = new List<ICard>();
 
