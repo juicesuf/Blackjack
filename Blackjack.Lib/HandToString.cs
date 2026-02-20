@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Blackjack.Lib
 {
-    public class HandToString
-    {
+
+    
         public partial class Hand
         {
             public override string ToString()
             {
                 StringBuilder handAsString = new StringBuilder();
 
-                foreach (Card card in _cards)
+                foreach (Card card in GetTheCardsOfTheHand)
                 {
                     handAsString.Append(card.ToString());
                     handAsString.Append(", ");
@@ -35,5 +35,5 @@ namespace Blackjack.Lib
             }
 
         }
-    }
+    
 }

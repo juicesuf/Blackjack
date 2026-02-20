@@ -14,8 +14,9 @@ namespace Blackjack.Lib
         /// <summary>
         /// Enthält alle Karten der Hand.
         /// </summary>
-        List<ICard> GetHand { get; } = new List<ICard>();
+        private List<ICard> _cards = new List<ICard>();
 
+        public List<ICard> GetTheCardsOfTheHand { get { return _cards;} }
         /// <summary>
         /// Aktueller Status der Hand.
         /// </summary>
@@ -35,7 +36,7 @@ namespace Blackjack.Lib
         /// <param name="card">Die hinzuzufügende Karte.</param>
         public void AddCard(ICard card)
         {
-            GetHand.Add(card);
+            _cards.Add(card);
 
             // Nach jeder neuen Karte wird der Wert neu berechnet
             CalculateValue();
@@ -51,7 +52,7 @@ namespace Blackjack.Lib
             int aces = 0;    // Anzahl der Asse (werden zuerst als 11 gezählt)
 
             // Alle Karten der Hand durchgehen
-            foreach (ICard currentCard in GetHand)
+            foreach (ICard currentCard in _cards)
             {
                 // Ass: zuerst als 11 zählen
                 if (currentCard.Value == CardValue.Ace)
@@ -92,7 +93,7 @@ namespace Blackjack.Lib
         /// <param name="value">Der berechnete Handwert.</param>
         void SetHandStatus(int value)
         {
-            int cardCount = GetHand.Count; // Anzahl der Karten in der Hand
+            int cardCount = _cards.Count; // Anzahl der Karten in der Hand
 
             // Hand ist überkauft
             if (value > 21)
@@ -110,7 +111,7 @@ namespace Blackjack.Lib
                     Status = HandStatus.BlackJack;
                 }
                 // Triple Seven: 3 Karten und alle sind Sieben
-                else if (cardCount == 3 && GetHand.All(card => card.Value == CardValue.Seven))
+                else if (cardCount == 3 && _cards.All(card => card.Value == CardValue.Seven))
                 {
                     Status = HandStatus.TripleSeven;
                 }
@@ -127,7 +128,7 @@ namespace Blackjack.Lib
                 return;
             }
 
-            // Kein Sonderfall → Hand ist sicher
+            // Kein Sonderfall, dann ist Hand sicher
             Status = HandStatus.Safe;
         }
     }
