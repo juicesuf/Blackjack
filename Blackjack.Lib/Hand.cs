@@ -11,10 +11,12 @@ namespace Blackjack.Lib
     /// </summary>
     public partial class Hand
     {
+        public IEnumerable<ICard> GetCards { get; }
         /// <summary>
         /// Enthält alle Karten der Hand.
         /// </summary>
         private List<ICard> _cards = new List<ICard>();
+
 
         public List<ICard> GetTheCardsOfTheHand { get { return _cards;} }
         /// <summary>
@@ -71,6 +73,7 @@ namespace Blackjack.Lib
                 {
                     // Zahlenkarten zählen ihren Zahlenwert
                     value += (int)currentCard.Value;
+                    value++;
                 }
             }
 

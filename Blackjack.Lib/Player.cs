@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Blackjack.Lib
 {
-    public enum HandStatus
+    public class Player : AbstractPlayer
     {
-        Safe,
-        Busted,
-        BlackJack,
-        TripleSeven,    
-        FiveCardCharlie
+        public Player(string name, ICardPool cardpool) : base(name, cardpool)
+        {
+            
+        }
     }
 }

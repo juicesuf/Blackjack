@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Blackjack.Lib
 {
-    public enum HandStatus
+    public interface ICardPool
     {
-        Safe,
-        Busted,
-        BlackJack,
-        TripleSeven,    
-        FiveCardCharlie
+        ICard DrawCard();
     }
 }

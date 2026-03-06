@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 namespace Blackjack.Lib
 {
 
-    
-        public partial class Hand
+    /// <summary>
+    /// vorgegebene Klasse von Prof. Theiler
+    /// </summary>
+    public partial class Hand
         {
             public override string ToString()
             {
                 StringBuilder handAsString = new StringBuilder();
 
-                foreach (Card card in GetTheCardsOfTheHand)
+                foreach (ICard card in _cards)
                 {
                     handAsString.Append(card.ToString());
                     handAsString.Append(", ");

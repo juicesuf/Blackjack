@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace Blackjack.Lib
 {
-    public enum HandStatus
+    public enum PlayerAction
     {
-        Safe,
-        Busted,
-        BlackJack,
-        TripleSeven,    
-        FiveCardCharlie
+        None,
+        Hit,
+        Stand
     }
 }

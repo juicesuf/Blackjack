@@ -30,7 +30,7 @@ namespace Blackjack.Lib
         }
 
         /// <summary>
-        /// Erstellt ein neues Kartendeck mit 52 Karten.
+        /// Erstellt ein neues Kartendeck mit 52 Karten. (Factory wird angewendet)
         /// </summary>
         public CardDeck()
         {

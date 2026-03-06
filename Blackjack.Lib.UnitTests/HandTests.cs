@@ -4,19 +4,31 @@ using System;
 namespace Blackjack.Lib.UnitTests
 {
     [TestClass]
-    public class UnitTest1
+    public class HandTests
     {
         [TestMethod]
-        public void TestHandStatus_Safe()
+        public void TestCalculateValue()
         {
                 Hand hand = new Hand();
                 hand.AddCard(Factory.CreateCard(CardSuit.Club, CardValue.Five));
                 hand.AddCard(Factory.CreateCard(CardSuit.Heart, CardValue.Nine));
-
+            
                 int value = hand.CalculateValue();
 
                 Assert.AreEqual(14, value);
-                Assert.AreEqual(HandStatus.Safe, hand.Status);
+
+        }
+
+        [TestMethod]
+        public void TestHandStatus()
+        {
+            Hand hand = new Hand();
+            hand.AddCard(Factory.CreateCard(CardSuit.Club, CardValue.Five));
+            hand.AddCard(Factory.CreateCard(CardSuit.Heart, CardValue.Nine));
+
+            int value = hand.CalculateValue();
+
+            Assert.AreEqual(HandStatus.Safe, hand.Status);
         }
 
         [TestMethod]

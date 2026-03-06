@@ -65,6 +65,7 @@ namespace Blackjack.UI
                     break;
                 }
             }
+            Console.ReadKey();
         }
     }
 }
