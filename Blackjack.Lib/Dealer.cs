@@ -8,16 +8,21 @@ namespace Blackjack.Lib
 {
     public class Dealer : AutoPlayer
     {
-        public ICard FirstCard { get; }
-
-        public Dealer()
+        public Dealer(string name, ICardPool cardPool) : base(name, cardPool)
         {
-
         }
 
+        public ICard FirstCard { get; }
+
+       
         public string ToString(bool firstCardOnly)
         {
-            return $"The first card is" + firstCardOnly;
+            if (firstCardOnly)
+            {
+                ToString();
+            }
+
+            return firstCardOnly.ToString();
         }
     }
 }

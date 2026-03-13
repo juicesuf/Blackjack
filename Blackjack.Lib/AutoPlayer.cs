@@ -13,9 +13,6 @@ namespace Blackjack.Lib
 
         }
 
-        public PlayerAction GetNextAction(ICard dealerCard)
-        {
-
-        }
+     
     }
 }

@@ -16,7 +16,7 @@ namespace Blackjack.Lib
 
         public PlayerAction LastAction { get; }
 
-        public bool HasFinished { get; }
+        public bool HasFinished { get; private set; }
 
         internal AbstractPlayer(string name, ICardPool cardPool)
         {
@@ -26,12 +26,29 @@ namespace Blackjack.Lib
 
         public void PlayAction(PlayerAction playeraction)
         {
+            if (HasFinished) return;
 
+            if(LastAction == PlayerAction.Stand)
+            {
+                return;
+            }
+
+            else if (playeraction == PlayerAction.Hit)
+            {
+                _hand.AddCard(_cardPool.DrawCard());
+                playeraction = PlayerAction.Hit;
+            }
         }
 
         public void ThrowCards()
         {
-            
+            if (HasFinished)
+            {
+                _hand = new Hand();
+                HasFinished = false;
+            }
+
+       
         }
 
         public string GetName()

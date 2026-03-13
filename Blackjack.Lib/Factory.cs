@@ -21,6 +21,17 @@ namespace Blackjack.Lib
         {
             return new Card(suit, value);
         }
+
+        /// <summary>
+        /// Erstellt einen neuen Kartenstapel.
+        /// </summary>
+        /// <returns>Einen neuen Kartenstapel.</returns>
+        public static ICardStack CreateCardStack()
+        {
+            return new CardStack();
+        }
+
+
     }
 
 }
