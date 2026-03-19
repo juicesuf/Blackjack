@@ -13,9 +13,9 @@ namespace Blackjack.Lib.UnitTests
                 hand.AddCard(Factory.CreateCard(CardSuit.Club, CardValue.Five));
                 hand.AddCard(Factory.CreateCard(CardSuit.Heart, CardValue.Nine));
             
-                int value = hand.CalculateValue();
+                int actual = hand.CalculateValue();
 
-                Assert.AreEqual(14, value);
+                Assert.AreEqual(14, actual);
 
         }
 
@@ -26,7 +26,7 @@ namespace Blackjack.Lib.UnitTests
             hand.AddCard(Factory.CreateCard(CardSuit.Club, CardValue.Five));
             hand.AddCard(Factory.CreateCard(CardSuit.Heart, CardValue.Nine));
 
-            int value = hand.CalculateValue();
+            int actual = hand.CalculateValue();
 
             Assert.AreEqual(HandStatus.Safe, hand.Status);
         }
@@ -38,9 +38,9 @@ namespace Blackjack.Lib.UnitTests
             hand.AddCard(Factory.CreateCard(CardSuit.Diamond, CardValue.Ace));
             hand.AddCard(Factory.CreateCard(CardSuit.Spade, CardValue.Nine));
 
-            int value = hand.CalculateValue();
+            int actual = hand.CalculateValue();
 
-            Assert.AreEqual(20, value);
+            Assert.AreEqual(20, actual);
         }
     }
     

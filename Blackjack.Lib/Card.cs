@@ -17,7 +17,7 @@ namespace Blackjack.Lib
         public CardSuit Suit { get; }
 
         /// <summary>
-        /// Der Wert der Karte.
+        /// Der Wert der Karte.<
         /// </summary>
         public CardValue Value { get; }
 
